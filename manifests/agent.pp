@@ -115,7 +115,7 @@
 # @param include_dir_purge Include dir to purge.
 # @param unsafeuserparameters Allow all characters to be passed in arguments to user-defined parameters.
 # @param userparameter User-defined parameter to monitor.
-# @param loadmodulepath Full path to location of agent modules.
+# @param loadmodulepath Optional full path to location of agent modules.
 # @param loadmodule Module to load at agent startup.
 # @param manage_startup_script
 #  If the init script should be managed by this module. Attention: This might
