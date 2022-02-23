@@ -19,7 +19,6 @@ class zabbix::params {
       $agent_include            = '/etc/zabbix/zabbix_agentd.d'
       $server_zabbix_user       = 'zabbix'
       $zabbix_package_provider  = undef
-      $agent_loadmodulepath     = '/usr/lib/modules'
     }
     'AIX': {
       $manage_repo              = false
@@ -50,7 +49,6 @@ class zabbix::params {
       $agent_include            = '/etc/zabbix/zabbix_agentd.d'
       $server_zabbix_user       = 'zabbix-server'
       $zabbix_package_provider  = undef
-      $agent_loadmodulepath     = '/usr/lib/modules'
     }
     'Fedora': {
       $server_fpinglocation     = '/usr/sbin/fping'
@@ -69,7 +67,6 @@ class zabbix::params {
       $agent_include            = '/etc/zabbix/zabbix_agentd.d'
       $server_zabbix_user       = 'zabbix'
       $zabbix_package_provider  = undef
-      $agent_loadmodulepath     = '/usr/lib/modules'
     }
     'Gentoo': {
       $server_fpinglocation     = '/usr/sbin/fping'
@@ -88,7 +85,6 @@ class zabbix::params {
       $agent_include            = '/etc/zabbix/zabbix_agentd.d'
       $server_zabbix_user       = 'zabbix'
       $zabbix_package_provider  = undef
-      $agent_loadmodulepath     = '/usr/lib/modules'
     }
     'windows': {
       $manage_repo             = false
@@ -102,7 +98,6 @@ class zabbix::params {
       $agent_pidfile           = 'C:/ProgramData/zabbix/zabbix_agentd.pid'
       $agent_servicename       = 'Zabbix Agent'
       $agent_include           = 'C:/ProgramData/zabbix/zabbix_agentd.d'
-      $agent_loadmodulepath    = undef
     }
     default  : {
       $server_fpinglocation     = '/usr/sbin/fping'
@@ -121,7 +116,6 @@ class zabbix::params {
       $agent_servicename        = 'zabbix-agent'
       $server_zabbix_user       = 'zabbix'
       $zabbix_package_provider  = undef
-      $agent_loadmodulepath     = '/usr/lib/modules'
     }
   }
 
@@ -292,7 +286,7 @@ class zabbix::params {
   $server_socketdir                         = undef
 
   # Agent specific params
-  $agent_allowroot                          = '0'
+  $agent_allowroot                          = undef
   $agent_buffersend                         = '5'
   $agent_buffersize                         = '100'
   $agent_debuglevel                         = '3'
@@ -309,15 +303,16 @@ class zabbix::params {
   $agent_listenip                           = undef
   $agent_listenport                         = '10050'
   $agent_loadmodule                         = undef
-  $agent_logremotecommands                  = '0'
-  $agent_maxlinespersecond                  = '100'
+  $agent_loadmodulepath                     = undef
+  $agent_logremotecommands                  = undef
+  $agent_maxlinespersecond                  = undef
   $agent_refreshactivechecks                = '120'
   $agent_server                             = '127.0.0.1'
   $agent_serveractive                       = undef
   $agent_service_ensure                     = 'running'
   $agent_service_enable                     = true
   $agent_sourceip                           = undef
-  $agent_startagents                        = '3'
+  $agent_startagents                        = undef
   $agent_timeout                            = '3'
   $agent_tlsaccept                          = undef
   $agent_tlscafile                          = undef
