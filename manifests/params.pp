@@ -271,7 +271,7 @@ class zabbix::params {
   $server_tlscipherpsk13                    = undef
   $server_tmpdir                            = '/tmp'
   $server_trappertimeout                    = 300
-  $server_trendcachesize                    = 4M
+  $server_trendcachesize                    = '4M'
   $server_unavailabledelay                  = 60
   $server_unreachabledelay                  = 15
   $server_unreachableperiod                 = 45
