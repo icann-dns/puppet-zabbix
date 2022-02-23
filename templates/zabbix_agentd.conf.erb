@@ -42,7 +42,6 @@ LogFileSize=<%= @logfilesize %><% end -%>
 #	5 - extended debugging (produces even more information)
 DebugLevel=<%= @debuglevel %>
 
-
 ### Option: SourceIP
 #	Source IP address for outgoing connections.
 #
@@ -74,7 +73,7 @@ DebugLevel=<%= @debuglevel %>
 <% if @denykey %>DenyKey=<%= @denykey -%><% end %>
 <% end %>
 
-<% if @zabbix_version.to_f < 5.0 %>
+<% if @zabbix_version.to_f < 5.0 && @servicename != 'zabbix-agent2' %>
 ### Option: EnableRemoteCommands
 #	Whether remote commands from Zabbix server are allowed.
 #	0 - not allowed
@@ -83,13 +82,14 @@ DebugLevel=<%= @debuglevel %>
 EnableRemoteCommands=<%= @enableremotecommands %>
 <% end %>
 
+<% if @servicename != 'zabbix-agent2' -%>
 ### Option: LogRemoteCommands
 #	Enable logging of executed shell commands as warnings.
 #	0 - disabled
 #	1 - enabled
 #
 LogRemoteCommands=<%= @logremotecommands %>
-
+<% end %>
 
 ##### Passive checks related
 
@@ -111,11 +111,13 @@ ListenPort=<%= @listenport %>
 #
 <% if @listen_ip %>ListenIP=<%= @listen_ip %><% end %>
 
+<% if @servicename != 'zabbix-agent2' -%>
 ### Option: StartAgents
 #	Number of pre-forked instances of zabbix_agentd that process passive checks.
 #	If set to 0, disables passive checks and the agent will not listen on any TCP port.
 #
 StartAgents=<%= @startagents %>
+<% end %>
 
 ##### Active checks related
 
@@ -192,6 +194,7 @@ BufferSend=<%= @buffersend %>
 #
 BufferSize=<%= @buffersize %>
 
+<% if @servicename != 'zabbix-agent2' -%>
 ### Option: MaxLinesPerSecond
 #	Maximum number of new lines the agent will send per second to Zabbix Server
 #	or Proxy processing 'log' and 'logrt' active checks.
@@ -199,6 +202,7 @@ BufferSize=<%= @buffersize %>
 #	provided in 'log' or 'logrt' item keys.
 #
 MaxLinesPerSecond=<%= @maxlinespersecond %>
+<% end %>
 
 ############ ADVANCED PARAMETERS #################
 
@@ -216,13 +220,12 @@ MaxLinesPerSecond=<%= @maxlinespersecond %>
         <%- end -%>
 <% end %>
 
-
 ### Option: Timeout
 #	Spend no more than Timeout seconds on processing
 #
 Timeout=<%= @timeout %>
 
-<% if @kernel != 'windows' %>
+<% if @kernel != 'windows' && @servicename != 'zabbix-agent2' %>
 ### Option: AllowRoot
 #	Allow the agent to run as 'root'. If disabled and the agent is started by 'root', the agent
 #	will try to switch to the user specified by the User configuration option instead.
@@ -233,7 +236,7 @@ Timeout=<%= @timeout %>
 AllowRoot=<%= @allowroot %>
 <% end %>
 
-<% if @kernel != 'windows' %>
+<% if @kernel != 'windows' && @servicename != 'zabbix-agent2' %>
 ### Option: User
 #	Drop privileges to a specific, existing user on the system.
 #	Only has effect if run as 'root' and AllowRoot is disabled.
@@ -268,7 +271,7 @@ UnsafeUserParameters=<%= @unsafeuserparameters %>
 # 	Disabled. A configuration file should be placed on directory: <%= @include %>
 
 ####### LOADABLE MODULES #######
-<% if @kernel != 'windows' %>
+<% if @kernel != 'windows' && @servicename != 'zabbix-agent2' %>
 ### Option: LoadModulePath
 #	Full path to location of agent modules.
 #	Default depends on compilation options.
