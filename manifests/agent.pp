@@ -73,7 +73,7 @@
 # @param buffersize Maximum number of values in a memory buffer.
 # @param maxlinespersecond Optional maximum number of new lines the agent will send per second to zabbix server or proxy processing.
 # @param allowroot Optional allow the agent to run as 'root'.
-# @param zabbix_user Drop privileges to a specific, existing user on the system. Only has effect if run as 'root' and AllowRoot is disabled.
+# @param zabbix_user Optional drop privileges to a specific, existing user on the system. Only has effect if run as 'root' and AllowRoot is disabled.
 # @param zabbix_alias Sets an alias for parameter.
 # @param timeout Spend no more than timeout seconds on processing.
 # @param tlsaccept What incoming connections to accept from Zabbix server. Used for a passive proxy, ignored on an active proxy.
