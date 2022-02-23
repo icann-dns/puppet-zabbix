@@ -12,7 +12,7 @@ class zabbix::params {
       $zabbix_package_agent     = 'zabbix-agent'
       $agent_configfile_path    = '/etc/zabbix/zabbix_agentd.conf'
       $agent_config_owner       = 'zabbix'
-      $agent_zabbix_user        = 'zabbix'
+      $agent_zabbix_user        = null
       $agent_config_group       = 'zabbix'
       $agent_pidfile            = '/var/run/zabbix/zabbix_agentd.pid'
       $agent_servicename        = 'zabbix-agent'
@@ -26,12 +26,11 @@ class zabbix::params {
       $zabbix_package_agent     = 'zabbix-agent'
       $agent_configfile_path    = '/etc/zabbix/zabbix_agentd.conf'
       $agent_config_owner       = 'zabbix'
-      $agent_zabbix_user        = 'zabbix'
+      $agent_zabbix_user        = null
       $agent_config_group       = 'zabbix'
       $agent_pidfile            = '/var/run/zabbix/zabbix_agentd.pid'
       $agent_servicename        = 'zabbix-agent'
     }
-
     'Archlinux': {
       $server_fpinglocation     = '/usr/bin/fping'
       $server_fping6location    = '/usr/bin/fping6'
@@ -60,7 +59,7 @@ class zabbix::params {
       $zabbix_package_agent     = 'zabbix-agent'
       $agent_configfile_path    = '/etc/zabbix_agentd.conf'
       $agent_config_owner       = 'zabbix'
-      $agent_zabbix_user        = 'zabbix'
+      $agent_zabbix_user        = null
       $agent_config_group       = 'zabbix'
       $agent_pidfile            = '/var/run/zabbix/zabbix_agentd.pid'
       $agent_servicename        = 'zabbix-agent'
@@ -78,7 +77,7 @@ class zabbix::params {
       $zabbix_package_agent     = 'zabbix'
       $agent_configfile_path    = '/etc/zabbix/zabbix_agentd.conf'
       $agent_config_owner       = 'zabbix'
-      $agent_zabbix_user        = 'zabbix'
+      $agent_zabbix_user        = null
       $agent_config_group       = 'zabbix'
       $agent_pidfile            = '/var/run/zabbix/zabbix_agentd.pid'
       $agent_servicename        = 'zabbix-agentd'
@@ -109,7 +108,7 @@ class zabbix::params {
       $zabbix_package_agent     = 'zabbix-agent'
       $agent_configfile_path    = '/etc/zabbix/zabbix_agentd.conf'
       $agent_config_owner       = 'zabbix'
-      $agent_zabbix_user        = 'zabbix'
+      $agent_zabbix_user        = null
       $agent_config_group       = 'zabbix'
       $agent_pidfile            = '/var/run/zabbix/zabbix_agentd.pid'
       $agent_include            = '/etc/zabbix/zabbix_agentd.d'
@@ -286,7 +285,7 @@ class zabbix::params {
   $server_socketdir                         = undef
 
   # Agent specific params
-  $agent_allowroot                          = undef
+  $agent_allowroot                          = '0'
   $agent_buffersend                         = '5'
   $agent_buffersize                         = '100'
   $agent_debuglevel                         = '3'
