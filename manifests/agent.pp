@@ -40,8 +40,8 @@
 # @param sourceip Source ip address for outgoing connections.
 # @param allowkey Allow execution of item keys matching pattern.
 # @param denykey Deny execution of items keys matching pattern.
-# @param enableremotecommands Whether remote commands from zabbix server are allowed.
-# @param logremotecommands Enable logging of executed shell commands as warnings.
+# @param enableremotecommands Optional whether remote commands from zabbix server are allowed.
+# @param logremotecommands Optional enable logging of executed shell commands as warnings.
 # @param server List of comma delimited ip addresses (or hostnames) of zabbix servers.
 # @param listenport Agent will listen on this port for connections from the server.
 # @param listenip
@@ -54,7 +54,7 @@
 #   It will find out which ip is configured for this ipaddress. Can be handy
 #   if more than 1 interface is on the server.
 #
-# @param startagents Number of pre-forked instances of zabbix_agentd that process passive checks.
+# @param startagents Optional number of pre-forked instances of zabbix_agentd that process passive checks.
 # @param serveractive List of comma delimited ip:port (or hostname:port) pairs of zabbix servers for active checks.
 # @param service_ensure Start / stop the agent service. E.g. to preconfigure a hosts agent and turn on the service at a later time (when the server reaches production SLA)
 # @param service_enable Automatically start the agent on system boot
@@ -71,8 +71,8 @@
 # @param refreshactivechecks How often list of active checks is refreshed, in seconds.
 # @param buffersend Do not keep data longer than n seconds in buffer.
 # @param buffersize Maximum number of values in a memory buffer.
-# @param maxlinespersecond Maximum number of new lines the agent will send per second to zabbix server or proxy processing.
-# @param allowroot Allow the agent to run as 'root'.
+# @param maxlinespersecond Optional maximum number of new lines the agent will send per second to zabbix server or proxy processing.
+# @param allowroot Optional allow the agent to run as 'root'.
 # @param zabbix_user Drop privileges to a specific, existing user on the system. Only has effect if run as 'root' and AllowRoot is disabled.
 # @param zabbix_alias Sets an alias for parameter.
 # @param timeout Spend no more than timeout seconds on processing.
