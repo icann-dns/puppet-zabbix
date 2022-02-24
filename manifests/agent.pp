@@ -38,8 +38,8 @@
 # @param logtype Specifies where log messages are written to. Can be one of: console, file, system.
 # @param debuglevel Specifies debug level.
 # @param sourceip Source ip address for outgoing connections.
-# @param allowkey Allow execution of item keys matching pattern.
-# @param denykey Deny execution of items keys matching pattern.
+# @param allowkey Optional allow execution of item keys matching pattern.
+# @param denykey Optional deny execution of items keys matching pattern.
 # @param enableremotecommands Optional whether remote commands from zabbix server are allowed.
 # @param logremotecommands Optional enable logging of executed shell commands as warnings.
 # @param server List of comma delimited ip addresses (or hostnames) of zabbix servers.
